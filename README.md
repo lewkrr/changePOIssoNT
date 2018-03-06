@@ -24,3 +24,9 @@ To merge the branch with master, **from the master** use the git merge command
 
 **git merge update_README**
 
+Once that is complete, if you type **git hist**, you will see that *HEAD*, *master*, and *update_README* all point to the same commit.
+
+Now, we no longer need the updates branch.  The *-d* option of git branch will delete the unneeded branch.
+
+**git branch -d update_README**
+
