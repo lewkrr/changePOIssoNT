@@ -30,10 +30,3 @@ Now, we no longer need the updates branch.  The *-d* option of git branch will d
 
 **git branch -d update_README**
 
-### Creating conflicts
-<<<<<<< HEAD
-Oh what a silly oversight!
-=======
-This is bound to cause trouble
->>>>>>> very_bad
-
