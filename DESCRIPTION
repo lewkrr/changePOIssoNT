@@ -1,0 +1,28 @@
+Package: changePOIssoNT
+Type: Package
+Title: Poisson count intensity changepoint detection
+Version: 0.1.0
+Date: format(Sys.Date(), format="%B %d %Y")
+Authors@R: person("Luke", "Klein", email = "lklei001@ucr.edu", role = c("aut", "cre"))
+Author: Luke Klein
+Maintainer: Luke Klein <lklei001@ucr.edu>
+Description: changePOIssoNT is a package for detecting poisson changepoints 
+    in 1-dimensional poisson count data.
+License: GPL-2
+LazyData: TRUE
+Imports:
+  dplyr (>= 1.8.4),
+  ggplot2 (>= 2.2.1),
+  readxl (>= 1.0.0)
+Suggests:
+  knitr,
+  rmarkdown,
+  BiocStyle,
+  testthat,
+  tidyverse
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
+Collate: 
+    'skellamLR.R'
+    'assess_Vertices.R'
+    'find_neighbors.R'

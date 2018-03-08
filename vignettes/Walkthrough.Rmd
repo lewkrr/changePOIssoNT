@@ -1,0 +1,31 @@
+---
+title: "changePOIssoNT Vignette"
+author: "Luke Klein"
+date: '`r format(Sys.Date(), format="%B %d %Y")`'
+package: changePOIssoNT
+output: rmarkdown::html_vignette
+toc_float: true
+vignette: >
+  %\VignetteIndexEntry{Aesthetic specifications}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Function dependencies
+
+Below is a network graph illustrating the dependencies of all functions in `changePOIssoNT`
+
+```{r func-dependencies, echo=FALSE}
+library(dplyr)
+library("DependenciesGraphs")
+library(changePOIssoNT)
+dep <- envirDependencies('package:changePOIssoNT')
+plot(dep)
+```
+
+
+
