@@ -1,0 +1,5 @@
+1. Document skellamLR
+2. Create sample dataset
+3. Document data
+3. Number functions
+4. 

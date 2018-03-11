@@ -1,8 +1,3 @@
----
-output:
-  html_document:
-    keep_md: yes
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -30,10 +25,20 @@ summary(cars)
 #>  Max.   :25.0   Max.   :120.00
 ```
 
-## Including Plots
+## Function Dependencies
 
-You can also embed plots, for example:
+Below is a network graph illustrating the dependencies of all functions in `changePOIssoNT`
 
-![](README_files/figure-html/pressure-1.png)<!-- -->
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```
+#> 
+#> Attaching package: 'shinydashboard'
+#> The following object is masked from 'package:graphics':
+#> 
+#>     box
+```
+
+<!--html_preserve--><div id="htmlwidget-6de8e551578a10a94616" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6de8e551578a10a94616">{"x":{"nodes":{"id":["1"],"label":["skellamLR"]},"edges":{"from":[],"to":[]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":"from"},"interaction":{"dragNodes":true},"physics":{"solver":"repulsion","stabilization":{"enabled":false,"iterations":5000,"onlyDynamicEdges":false}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)"},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+
+

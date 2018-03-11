@@ -63,9 +63,6 @@ ggsave(file=here("man","figures","logo.svg"), plot=logo, width=6, height=4)
 
 # changePOIssoNT <img src="man/figures/logo.svg" align="right" alt="changePOIssoNT logo" width="150" height="100" />
 
-```{r }
-
-```
 
 ## Overview
 
@@ -75,13 +72,15 @@ changePOIssoNT is a package for detecting changepoints in 1-dimensional poisson 
 summary(cars)
 ```
 
-## Function Dependencies
+## Installation
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-library("DependenciesGraphs")
+## Usage
 
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Learning changePOIssoNT
+
+
+## Getting help
+
+
