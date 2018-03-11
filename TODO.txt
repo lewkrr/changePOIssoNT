@@ -2,4 +2,4 @@
 2. Create sample dataset
 3. Document data
 3. Number functions
-4. 
+4. Modify dataset with year and week data to comport with `lubridate`
