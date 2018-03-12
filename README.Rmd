@@ -68,9 +68,7 @@ ggsave(file=here("man","figures","logo.svg"), plot=logo, width=6, height=4)
 
 changePOIssoNT is a package for detecting changepoints in 1-dimensional poisson count data.
 
-```{r cars}
-summary(cars)
-```
+
 
 ## Installation
 
