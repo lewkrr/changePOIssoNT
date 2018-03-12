@@ -1,5 +1,5 @@
 
 
-f_fraction <- function (nu, x) {
-  x/(nu + sqrt(nu^2 + x^2))
+f_fraction <- function (x, y) {
+  y/(x + sqrt(x^2 + y^2))
 }
