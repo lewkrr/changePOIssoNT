@@ -1,5 +1,5 @@
-h_upper_bound(x){
-  alpha0 <- -log(srqt(2) - 1)
+h_upper_bound <- function(x){
+  alpha0 <- -log(sqrt(2) - 1)
   
   A = 2 * x / alpha0 * 
         ( 

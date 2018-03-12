@@ -1,7 +1,7 @@
 
 
 
-lower_H_bound <- function(x) {
+h_lower_bound <- function(x) {
   
   A =  2 * x * exp(-1 / x) /
       (1.5 + sqrt( 2.25 + 4*x) )
