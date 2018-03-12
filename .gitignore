@@ -5,3 +5,6 @@
 
 # Cached directories
 *_cache/
+
+# PDF articles
+doc/*.pdf
