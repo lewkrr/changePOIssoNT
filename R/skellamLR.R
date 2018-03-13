@@ -1,11 +1,11 @@
-#' @title Skellam Likelihood ratio for varying window sizes
+#' @title Skellam Likelihood ratio for varying group sizes
 #'
 #' @description Takes in a data frame of candidate changepoints and clique 
 #'     capacities, then calculates the likelihood ratio for the difference
 #'     of each clique.
 #' 
 #' @param in_counts A dataframe containing the observed counts
-#' @param contender_and_reaches A dataframe containing the candidate 
+#' @param left_and_right_reaches A dataframe containing the candidate 
 #'     changepoints along with the maximum group sizes separated by their 
 #'     respective changepoint.
 #' 
@@ -13,33 +13,33 @@
 #' @export
 
 
-skellamLR = function(in_counts,contender_and_reaches){
-  # Check that `contender_and_reaches` is a dataframe
-  if(!is.data.frame(contender_and_reaches)){
-    stop("contender_and_reaches must be a dataframe with three columns")
-  }
-
-  cp_contender  <- contender_and_reaches[["cp_contender"]]
+skellamLR = function(contender_chng_pt, left_and_right_reaches, in_counts){
+  # FIXME add checks for inputs
+  stopifnot(is.numeric(contender_chng_pt) | is.integer(contender_chng_pt))
+  stopifnot(is.data.frame(left_and_right_reaches))
+  stopifnot(is.numeric(in_counts))
   
-  left_reach <- contender_and_reaches[["left_reach"]]
-  right_reach <- contender_and_reaches[["right_reach"]]
+  left_reach <- left_and_right_reaches[["left_reaches"]]
+  right_reach <- left_and_right_reaches[["right_reaches"]]
+  # Check
+  stopifnot(is.numeric(left_reach) & is.numeric(right_reach))
   
   #Define maximum values for each reach
   data_length = length(in_counts)
-  max_left_reach <- cp_contender - 1
-  max_right_reach <- data_length - cp_contender + 1
+  max_left_reach <- contender_chng_pt - 1
+  max_right_reach <- data_length - contender_chng_pt + 1
   
   stopifnot(left_reach <= max_left_reach)
   stopifnot(right_reach <= max_right_reach)
   
-  left_fence  = cp_contender - left_reach
-  right_fence = cp_contender + right_reach - 1
+  left_fence  = contender_chng_pt - left_reach
+  right_fence = contender_chng_pt + right_reach - 1
   
 
   
   # Define each "clique" to be the grouped observations on either side of the changpoint
-  left_clique  = in_counts[left_fence : (cp_contender-1)]
-  right_clique = in_counts[cp_contender : right_fence]
+  left_clique  = in_counts[left_fence : (contender_chng_pt-1)]
+  right_clique = in_counts[contender_chng_pt : right_fence]
   
   # Define the "clan" as the datapoints encompassed by the contender changepoint's reach
   clan = c(left_clique,right_clique)
