@@ -9,7 +9,12 @@
 #'     changepoints along with the maximum group sizes separated by their 
 #'     respective changepoint.
 #' 
-#' @return numeric
+#' @include evaluate_LR.R
+#' @include skellam_LR_bound.R
+#' 
+#' @importFrom purrr quietly
+#' 
+#' @return numeric. The value of the log skellam likelihood ratio. 
 #' @export
 
 
@@ -21,6 +26,7 @@ skellamLR = function(contender_chng_pt, left_and_right_reaches, in_counts){
   
   left_reach <- left_and_right_reaches[["left_reaches"]]
   right_reach <- left_and_right_reaches[["right_reaches"]]
+  
   # Check
   stopifnot(is.numeric(left_reach) & is.numeric(right_reach))
   
@@ -32,6 +38,8 @@ skellamLR = function(contender_chng_pt, left_and_right_reaches, in_counts){
   stopifnot(left_reach <= max_left_reach)
   stopifnot(right_reach <= max_right_reach)
   
+  # Convert the changepoint and reaches into the respective LOCATIONS 
+  # the define  the boundaries of each group/clique
   left_fence  = contender_chng_pt - left_reach
   right_fence = contender_chng_pt + right_reach - 1
   
@@ -43,7 +51,8 @@ skellamLR = function(contender_chng_pt, left_and_right_reaches, in_counts){
   
   # Define the "clan" as the datapoints encompassed by the contender changepoint's reach
   clan = c(left_clique,right_clique)
-
+  
+  # Calculate summary statistics
   left_sum  = sum(left_clique)
   right_sum = sum(right_clique)
   clan_sum  = sum(left_sum,right_sum)
@@ -53,20 +62,35 @@ skellamLR = function(contender_chng_pt, left_and_right_reaches, in_counts){
   right_avg = right_sum / right_reach
   clan_avg  = clan_sum/(left_reach+right_reach)
   
-  # Calculate the likelihood ratio for the given parameters assuming a difference between the cliques
+  
+  # Calculate the likelihood ratio (quietly) for the given parameters assuming a difference between the cliques
   # and no-difference between the cliques
-  options(warn=-1)
-  like =  - clan_avg + right_avg + left_avg  -
-            (clan_diff / 2) * (log(right_avg) - log(left_avg)) +
-            log(besselI(nu = clan_diff, x = 2 * clan_avg )) -
-            log(besselI(nu = clan_diff, x = 2*sqrt(left_avg*right_avg)))
-  options(warn=0)
+  evaluate_LR_quietly <- purrr::quietly(.f = evaluate_LR)
+  likelihood <- evaluate_LR_quietly(clan_avg,right_avg,left_avg,clan_diff)
+  
+  likelihood$final_result <- likelihood$result
+  
+  # check to see if the bessel function gives a warning 'precision lost in result'
+  LR_has_warning <- any( grepl("precision lost in result",likelihood$warnings) )
+  
+  # If the evaluation of the skellam likelihod throws an error, replace it with a
+  # worst-case upper bound.
+  if (LR_has_warning) {
+    likelihood$final_result <- 
+      skellam_LR_bound(w = clan_diff,
+                       left_avg = left_avg,
+                       right_avg = right_avg,
+                       null_avg = clan_avg,
+                       lower_bound = FALSE)
+  }
 
-  # If the LR is (=/-)Inf, replace the value
-  if(left_avg == right_avg |  like == Inf | like == -Inf | is.na(like) | is.nan(like) ){
-    like = NA
+  # Check that 
+  if(is.nan(likelihood$final_result)){
+    stop("The final result for the log likelihood ratio (likelihood$final_result) is returned as 'NaN'", call. = FALSE)
   }
   
+  like = as.numeric(likelihood$final_result)
+    
   return(like)
 }
 

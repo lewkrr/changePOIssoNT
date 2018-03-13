@@ -4,6 +4,8 @@
 #' @include window_grid.R
 #' @include skellamLR.R
 #' 
+#' @export
+#' 
 #' @importFrom truncnorm rtruncnorm
 
 differential.Evolution <- function( in_counts , contenter_chng_pts ,   n_gen = 1e6){

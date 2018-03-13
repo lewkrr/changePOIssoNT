@@ -19,7 +19,14 @@
 #'   the skellam likelihood ratio.
 #'     
 #' @export
+#' 
+#' @include h_upper_bound.R
+#' @include h_lower_bound.R
+#' 
 #' @importFrom Rdpack reprompt
+#' 
+#' @references
+#' \insertRef{balachandran2013exponential}{changePOIssoNT}
 
 skellam_LR_bound <- function (w = NULL, 
                       left_avg = NULL, right_avg = NULL, 

@@ -14,7 +14,7 @@ respective changepoint.}
 \item{in_counts}{A dataframe containing the observed counts}
 }
 \value{
-numeric
+numeric. The value of the log skellam likelihood ratio.
 }
 \description{
 Takes in a data frame of candidate changepoints and clique 

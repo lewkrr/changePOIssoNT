@@ -3,6 +3,47 @@ output:
   html_document:
     keep_md: yes
 ---
+[![Licence](https://img.shields.io/badge/licence-GPL--2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+[![Build Status](https://travis-ci.org/lewkrr/changePOIssoNT.svg?branch=master)](https://travis-ci.org/lewkrr/changePOIssoNT)
+ 
+---
+ 
+ 
+---
+ 
+[![Licence](https://img.shields.io/badge/licence-GPL--2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+ 
+---
+ 
+ 
+---
+ 
+[![Licence](https://img.shields.io/badge/licence-GPL--2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+ 
+---
+ 
+ 
+---
+ 
+[![Licence](https://img.shields.io/badge/licence-GPL--2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+ 
+---
+ 
+ 
+---
+ 
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+[![Licence](https://img.shields.io/badge/licence-GPL--2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+ 
+---
+ 
+[![minimal R version](https://img.shields.io/badge/R%3E%3D-3.4.3-6666ff.svg)](https://cran.r-project.org/)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/changePOIssoNT)](https://cran.r-project.org/package=changePOIssoNT)
+[![packageversion](https://img.shields.io/badge/Package%20version-0.1.0-orange.svg?style=flat-square)](commits/master)
+ 
+---
+ 
+[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -63,6 +104,10 @@ ggsave(file=here("man","figures","logo.svg"), plot=logo, width=6, height=4)
 
 # changePOIssoNT <img src="man/figures/logo.svg" align="right" alt="changePOIssoNT logo" width="150" height="100" />
 
+```{r}
+badgecreatr::badgeplacer(status = "wip" , githubaccount = "lewkrr",githubrepo = "changePOIssoNT", branch = "master")
+print("FIXME")
+```
 
 ## Overview
 

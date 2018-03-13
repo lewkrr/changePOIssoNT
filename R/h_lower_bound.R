@@ -1,4 +1,4 @@
-
+#' @export
 
 
 h_lower_bound <- function(x) {

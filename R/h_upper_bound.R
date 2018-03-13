@@ -1,3 +1,5 @@
+#' @export
+
 h_upper_bound <- function(x){
   alpha0 <- -log(sqrt(2) - 1)
   

@@ -27,6 +27,5 @@ if(!"DependenciesGraphs" %in% rownames(installed.packages())){
   options(warn=0)
   dep <- envirDependencies('package:changePOIssoNT')
   plot(dep)
-  
 }
 
