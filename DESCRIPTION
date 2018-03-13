@@ -12,12 +12,13 @@ License: GPL-2
 LazyData: TRUE
 Imports:
   data.table (>= 1.10.4-3),
-  dplyr (>= 3.1.2),
+  dplyr (>= 0.7.4),
   ggplot2 (>= 2.2.1),
   glue (>= 1.2.0),
   here (>= 0.1),
-  Matrix (>= 1.2-12),
+  Matrix (>= 1.2-11),
   purrr (>= 0.2.4),
+  Rdpack (>= 0.5-5),
   readr (>= 1.1.1),
   readxl (>= 1.0.0),
   tibble (>= 1.4.2),
@@ -33,3 +34,13 @@ Suggests:
   tidyverse
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
+RdMacros: Rdpack
+Collate: 
+    'LR_bound.R'
+    'skellamLR.R'
+    'window_grid.R'
+    'differential_Evolution.R'
+    'f_fraction.R'
+    'h_lower_bound.R'
+    'h_upper_bound.R'
+    'upper_LR_bound.R'

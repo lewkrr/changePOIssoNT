@@ -2,15 +2,22 @@
 % Please edit documentation in R/skellamLR.R
 \name{skellamLR}
 \alias{skellamLR}
-\title{Skellam Likelihood ratio for varying window sizes}
+\title{Skellam Likelihood ratio for varying group sizes}
 \usage{
-skellamLR(in.data, windows)
+skellamLR(contender_chng_pt, left_and_right_reaches, in_counts)
 }
 \arguments{
-\item{in.data}{a dataframe containing the observed counts}
+\item{left_and_right_reaches}{A dataframe containing the candidate 
+changepoints along with the maximum group sizes separated by their 
+respective changepoint.}
 
-\item{windows}{A dataframe containing the candidate changepoints along with the maximum possible values for each window}
+\item{in_counts}{A dataframe containing the observed counts}
+}
+\value{
+numeric
 }
 \description{
-Takes in a data frame of changepoints and window sizes, then calculates the LR for each
+Takes in a data frame of candidate changepoints and clique 
+    capacities, then calculates the likelihood ratio for the difference
+    of each clique.
 }

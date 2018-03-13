@@ -9,7 +9,7 @@
 #'     changepoints along with the maximum group sizes separated by their 
 #'     respective changepoint.
 #' 
-#' @return 
+#' @return numeric
 #' @export
 
 

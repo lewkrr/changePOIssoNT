@@ -1,11 +1,14 @@
 
-#' @importFrom data.table setkey
+ 
 
-window.grid <- function(windows){
+window.grid <- function(contender_and_reaches){
 
-  chng.pt = as.numeric(windows[1]) # chng.pt
-  MAX.lft = as.numeric(windows[2]) # MAX.lft
-  MAX.rt  = as.numeric(windows[3]) # MAX.rt
+  cp_contender  <- contender_and_reaches[["cp_contender"]]
+  
+  left_reach <- contender_and_reaches[["left_reach"]]
+  right_reach <- contender_and_reaches[["right_reach"]]
+  
+  
 
   # Define the size of the grid steps
   left.step.size  = min( ceiling(MAX.lft/6) , 100000 )
