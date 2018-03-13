@@ -1,7 +1,9 @@
+#' @title Differential evolution for discrete data with finite support.
+#' @description FIXME
 #' 
 #' @include window_grid.R
+#' @include skellamLR.R
 #' 
-#' @importFrom data.table duplicated
 #' @importFrom truncnorm rtruncnorm
 
 differential.Evolution <- function( in_counts , contenter_chng_pts ,   n_gen = 1e6){
@@ -113,7 +115,7 @@ differential.Evolution <- function( in_counts , contenter_chng_pts ,   n_gen = 1
       pop.i.G.plus.1.df = do.call(rbind.data.frame , X.i.plus.1)
 
       # Remove duplicates
-      dupes = duplicated(pop.i.G.plus.1.df)
+      #dupes = duplicated(pop.i.G.plus.1.df)
       pop.i.G.plus.1.df = pop.i.G.plus.1.df[!dupes,]
 
       # return population to original size
@@ -178,4 +180,4 @@ windows = data.frame( chng.pt = c(92,152,395) , MAX.lft = c(91,151,358) , MAX.rt
 
 windows = windows[3,]
 
-windows = full.windows
+#windows = full.windows
